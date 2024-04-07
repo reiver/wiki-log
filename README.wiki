@@ -3,15 +3,15 @@
 Creates a **wiki** **log** for a specific date-time.
 
 When year, month, and day it is depends on the location.
-**wiki-log** has a command-line **--location** option so that you can specify the **location**.
+The **wiki-log** command has a command-line **--location** option so that you can specify the **location**.
 For example:
 
- **wiki-log --location=America/Vancouver**
+ wiki-log --location=America/Vancouver
 
 If no date-time is provided, then it defaults to the current-date-time.
-**wiki-log** has a command-line **--when** option so that you can specify the **date-time**.
+The **wiki-log** command has a command-line **--when** option so that you can specify the **date-time**.
 
- **wiki-log --when=2022-11-04T18:03:45**
+ wiki-log --when=2022-11-04T18:03:45
 
 There is also a verbose mode that can be enabled with the command-line **-v** option.
 
@@ -19,13 +19,13 @@ There is also a verbose mode that can be enabled with the command-line **-v** op
 
 Likely you will either run **wiki-log** like this:
 
- **wiki-log**
+ wiki-log
 
 ... if you want to create a new log.
 
 Or like this:
 
- **wiki-log -v --location=America/Vancouver --when=2022-11-04T18:03:45
+ wiki-log -v --location=America/Vancouver --when=2022-11-04T18:03:45
 
 ... if you want to create an old log.
 
