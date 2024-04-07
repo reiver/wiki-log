@@ -41,6 +41,14 @@ And would create the file:
 
 You would then edit that file.
 
+§§ Format
+
+The format of the path of the created file is:
+
+ "log/" year "/" month "/" day "/" unix-time-stamp ".wiki"
+
+(And remember that the 'year', 'month', and 'day' are depended on both the date-time and the location.)
+
 §§ Author
 
 Application **wiki-log** was written by **Charles Iliya Krempeaux**
