@@ -1,3 +1,5 @@
+wiki/1
+
 § wiki-log
 
 Creates a **wiki** **log** for a specific date-time.
