@@ -2,7 +2,7 @@ wiki/1
 
 § wiki-log
 
-Creates a **wiki** **log** for a specific date-time.
+Application **wiki-log** creates a **log** for a specific date-time using the **wiki/1** file-format.
 
 When year, month, and day it is depends on the location.
 The **wiki-log** command has a command-line **--location** option so that you can specify the **location**.
@@ -30,6 +30,16 @@ Or like this:
  wiki-log -v --location=America/Vancouver --when=2022-11-04T18:03:45
 
 ... if you want to create an old log.
+
+Running that last comman would created the directory:
+
+ log/2024/04/07
+
+And would create the file:
+
+ log/2024/04/07/1712510558.wiki
+
+You would then edit that file.
 
 §§ Author
 
