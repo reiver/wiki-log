@@ -18,7 +18,7 @@ func init() {
 	flag.StringVar(&location, "location", "", "location; the year, month, and time can be different depending on the location. ex: --location=America/Vancouver or --location=Asia/Seoul or --location=Asia/Tehran")
 	flag.BoolVar(&verbose, "v", false, "verbose")
 	flag.StringVar(&when, "when", "", "when. ex: --when=2022-11-04T18:03:45Z")
-	flag.BoolVar(&verbose, "t", false, "trial")
+	flag.BoolVar(&trial, "t", false, "trial")
 
 	flag.Parse()
 }
