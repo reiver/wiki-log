@@ -8,12 +8,12 @@ When year, month, and day it is depends on the location.
 The **wiki-log** command has a command-line **--location** option so that you can specify the **location**.
 For example:
 
- wiki-log --location=America/Vancouver
+	wiki-log --location=America/Vancouver
 
 If no date-time is provided, then it defaults to the current-date-time.
 The **wiki-log** command has a command-line **--when** option so that you can specify the **date-time**.
 
- wiki-log --when=2022-11-04T18:03:45
+	wiki-log --when=2022-11-04T18:03:45
 
 There is also a verbose mode that can be enabled with the command-line **-v** option.
 
@@ -21,23 +21,23 @@ There is also a verbose mode that can be enabled with the command-line **-v** op
 
 Likely you will either run **wiki-log** like this:
 
- wiki-log
+	wiki-log
 
 ... if you want to create a new log.
 
 Or like this:
 
- wiki-log -v --location=America/Vancouver --when=2022-11-04T18:03:45
+	wiki-log -v --location=America/Vancouver --when=2022-11-04T18:03:45
 
 ... if you want to create an old log.
 
 Running that last comman would created the directory:
 
- log/2024/04/07
+	log/2024/04/07
 
 And would create the file:
 
- log/2024/04/07/1712510558.wiki
+	log/2024/04/07/1712510558.wiki
 
 You would then edit that file.
 
@@ -45,7 +45,7 @@ You would then edit that file.
 
 The format of the path of the created file is:
 
- "log/" year "/" month "/" day "/" unix-time-stamp ".wiki"
+	"log/" year "/" month "/" day "/" unix-time-stamp ".wiki"
 
 (And remember that the 'year', 'month', and 'day' are depended on both the date-time and the location.)
 
