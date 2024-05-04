@@ -17,7 +17,7 @@ var trial bool
 func init() {
 	flag.StringVar(&location, "location", "", "location; the year, month, and time can be different depending on the location. ex: --location=America/Vancouver or --location=Asia/Seoul or --location=Asia/Tehran")
 	flag.BoolVar(&verbose, "v", false, "verbose")
-	flag.StringVar(&when, "when", "", "when. ex: --when=2022-11-04T18:03:45Z")
+	flag.StringVar(&when, "when", "", "when. ex: --when=2022-11-04T18:03:45Z or --when=now")
 	flag.BoolVar(&trial, "t", false, "trial")
 
 	flag.Parse()
@@ -47,9 +47,15 @@ func main() {
 
 	var t time.Time
 	{
-		t = time.Now()
 
-		if "" != when {
+		switch {
+		case "" == when:
+			fmt.Fprintln(os.Stderr, "ERROR: '--when' must be specified; ex: --when=2022-11-04T18:03:45Z or --when=now")
+			os.Exit(1)
+			return
+		case "now" == when:
+			t = time.Now()
+		default:
 			var err error
 
 			t, err = time.Parse(time.RFC3339, when)
