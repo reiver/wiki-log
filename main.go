@@ -58,11 +58,11 @@ func main() {
 		default:
 			var err error
 
-			var timeformat string = time.RFC3339
+			var parsetimeformat string = time.RFC3339
 
 			t, err = time.Parse(timeformat, when)
 			if nil != err {
-				fmt.Fprintf(os.Stderr, "ERROR: could not parse date-time %q using time-format %q: %s\n", when, timeformat, err)
+				fmt.Fprintf(os.Stderr, "ERROR: could not parse date-time %q using time-format %q: %s\n", when, parsetimeformat, err)
 				os.Exit(1)
 				return
 			}
