@@ -17,7 +17,7 @@ var trial bool
 func init() {
 	flag.StringVar(&location, "location", "", "location; the year, month, and time can be different depending on the location. ex: --location=America/Vancouver or --location=Asia/Seoul or --location=Asia/Tehran")
 	flag.BoolVar(&verbose, "v", false, "verbose")
-	flag.StringVar(&when, "when", "", "when. ex: --when=2022-11-04T18:03:45Z or --when=now")
+	flag.StringVar(&when, "when", "", "when. ex: --when=2022-11-04T18:03:45Z or --when=2022-11-05T01:03:45-07:00 or --when=now")
 	flag.BoolVar(&trial, "t", false, "trial")
 
 	flag.Parse()
@@ -50,7 +50,7 @@ func main() {
 
 		switch {
 		case "" == when:
-			fmt.Fprintln(os.Stderr, "ERROR: '--when' must be specified; ex: --when=2022-11-04T18:03:45Z or --when=now")
+			fmt.Fprintln(os.Stderr, "ERROR: '--when' must be specified; ex: --when=2022-11-04T18:03:45Z or --when=2022-11-05T01:03:45-07:00 or --when=now")
 			os.Exit(1)
 			return
 		case "now" == when:
@@ -58,9 +58,11 @@ func main() {
 		default:
 			var err error
 
-			t, err = time.Parse(time.RFC3339, when)
+			var timeformat string = time.RFC3339
+
+			t, err = time.Parse(timeformat, when)
 			if nil != err {
-				fmt.Fprintf(os.Stderr, "ERROR: could not parse date-time %q: %s\n", when, err)
+				fmt.Fprintf(os.Stderr, "ERROR: could not parse date-time %q using time-format %q: %s\n", when, timeformat, err)
 				os.Exit(1)
 				return
 			}
