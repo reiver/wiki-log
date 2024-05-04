@@ -23,9 +23,9 @@ func init() {
 	flag.Parse()
 }
 
-// datetimelayout is the output date-time layout.
+// outputdatetimelayout is the output date-time layout.
 // This is in not parsing date-time layout.
-const datetimelayout string = "2006-01-02T15:04:05-07:00"
+const outputdatetimelayout string = "2006-01-02T15:04:05-07:00"
 
 func main() {
 
@@ -72,7 +72,7 @@ func main() {
 
 	}
 	if verbose {
-		fmt.Printf("Date-Time: %s\n", t.Format(datetimelayout))
+		fmt.Printf("Date-Time: %s\n", t.Format(outputdatetimelayout))
 	}
 
 	var dirname string
@@ -151,7 +151,7 @@ func main() {
 			""+"\n"+
 			"⸺ by Joe Blow"+"\n"+
 			""+"\n"+
-			"⸺ published "+t.Format(datetimelayout)+"\n"+
+			"⸺ published "+t.Format(outputdatetimelayout)+"\n"+
 			""+"\n"+
 			"Hello world!"+"\n",
 		)
